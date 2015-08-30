@@ -1,0 +1,13 @@
+The type CompanyRepository does not have an accessible constructor.
+
+Either it is not added to moduleint or the constructer is protected. 
+Solution: add registrar.RegisterType<ICompanyRepository, CompanyRepository>();
+and made constructer to public
+
+Error:
+The model backing the 'DatabaseContext' context has changed since the database was created.
+ Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+
+Run Migration and update command select Uranus.Data as Default project which is EF command file
+
+If file doesnot upload then add new { enctype = "multipart/form-data" } html.BeginForm() in view

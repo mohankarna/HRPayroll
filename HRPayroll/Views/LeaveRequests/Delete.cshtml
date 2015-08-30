@@ -1,0 +1,88 @@
+﻿@model HRPayroll.Domain.Entity.LeaveRequest
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LeaveRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsHalfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsHalfDay)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

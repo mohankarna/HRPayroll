@@ -1,0 +1,90 @@
+﻿@model HRPayroll.Domain.Entity.LeaveType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LeaveType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ethenic.EthenicGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ethenic.EthenicGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.GenderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType.ServiceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType.ServiceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowedPerYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowedPerYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowHalfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowHalfDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPayable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPayable)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

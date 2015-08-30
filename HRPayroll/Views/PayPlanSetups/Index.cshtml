@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HRPayroll.Domain.Entity.PayPlanSetup>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialAllow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DearnessAllow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherAllow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Insurance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousGrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentGrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialAllow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DearnessAllow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherAllow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Insurance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

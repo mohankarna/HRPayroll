@@ -1,0 +1,88 @@
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.LeaveRequest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h4>Leave Request</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Employee.EmployeeName)
+            @Html.DropDownListFor(model => model.EmployeeId, DropdownHelper.FillddlEmployee())
+            @Html.ValidationMessageFor(model => model.LeaveType)
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveType)
+            @Html.DropDownListFor(model => model.LeaveTypeId, DropdownHelper.FillddlLeaveType())
+            @Html.ValidationMessageFor(model => model.LeaveTypeId)
+        </div>
+
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Date)
+
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveFrom)
+
+            @Html.EditorFor(model => model.LeaveFrom)
+            @Html.ValidationMessageFor(model => model.LeaveFrom)
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveTo)
+
+            @Html.EditorFor(model => model.LeaveTo)
+            @Html.ValidationMessageFor(model => model.LeaveTo)
+        </div>
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.TotalDays)
+            @Html.EditorFor(model => model.TotalDays)
+            @Html.ValidationMessageFor(model => model.TotalDays)
+        </div>
+
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Reason)
+            @Html.EditorFor(model => model.Reason)
+            @Html.ValidationMessageFor(model => model.Reason)
+        </div>
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.IsHalfDay)
+            @Html.CheckBoxFor(model => model.IsHalfDay)
+            @Html.ValidationMessageFor(model => model.IsHalfDay)
+        </div>
+    </div>
+
+    <div class="form-group col-lg-4">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

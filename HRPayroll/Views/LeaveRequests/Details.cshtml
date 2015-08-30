@@ -1,0 +1,82 @@
+﻿@model HRPayroll.Domain.Entity.LeaveRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LeaveRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsHalfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsHalfDay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

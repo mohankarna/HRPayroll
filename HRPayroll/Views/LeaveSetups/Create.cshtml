@@ -1,0 +1,83 @@
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.LeaveType
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h4>Leave Type</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveName)
+            @Html.EditorFor(model => model.LeaveName)
+            @Html.ValidationMessageFor(model => model.LeaveName)
+        </div>
+
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveDescription)
+            @Html.EditorFor(model => model.LeaveDescription)
+            @Html.ValidationMessageFor(model => model.LeaveDescription)
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.ServiceTypeId, "Service Type")
+            @Html.DropDownListFor(model => model.ServiceTypeId, DropdownHelper.FillddlServiceType())
+            @Html.ValidationMessageFor(model => model.ServiceTypeId)
+        </div>
+                
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.AllowedPerYear)
+            @Html.EditorFor(model => model.AllowedPerYear)
+            @Html.ValidationMessageFor(model => model.AllowedPerYear)
+        </div>
+        
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Ethenic.EthenicGroup,"EthenicGroup")
+            @Html.DropDownListFor(model => model.EthenicId, DropdownHelper.FillddlServiceType())
+            @Html.ValidationMessageFor(model => model.EthenicId)
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.MaritalStatus, "MaritalStatus")
+            @Html.DropDownListFor(model => model.MaritalStatusId, DropdownHelper.FillddlMaritalStatus())
+            @Html.ValidationMessageFor(model => model.MaritalStatusId)
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Gender)
+            @Html.DropDownListFor(model => model.GenderId, DropdownHelper.FillddlGender())
+            @Html.ValidationMessageFor(model => model.GenderId)
+        </div>
+        
+        <div class="form-group col-lg-4" style="margin-top: 14px;">
+            @Html.LabelFor(model => model.AllowHalfDay)
+            @Html.EditorFor(model => model.AllowHalfDay)
+            @Html.ValidationMessageFor(model => model.AllowHalfDay)
+        </div>
+        
+        <div class="form-group col-lg-4" style="margin-top: 14px;">
+            @Html.LabelFor(model => model.IsPayable)
+            @Html.EditorFor(model => model.IsPayable)
+            @Html.ValidationMessageFor(model => model.IsPayable)
+        </div>
+    </div>
+    
+    <div class="form-group col-lg-4">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,105 @@
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h4>Employee</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.EmployeeName)
+
+            @Html.TextBoxFor(model => model.EmployeeName)
+            @Html.ValidationMessageFor(model => model.EmployeeName)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.TitleId, "TitleId")
+
+            @Html.DropDownListFor(model => model.TitleId, DropdownHelper.FillddlTitle())
+            @Html.ValidationMessageFor(model => model.TitleId)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.GenderId, "GenderId")
+
+            @Html.DropDownListFor(model => model.GenderId, DropdownHelper.FillddlGender())
+
+
+
+
+            @Html.ValidationMessageFor(model => model.GenderId)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.DesignationId, "DesignationId")
+
+            @Html.DropDownListFor(model => model.DesignationId, DropdownHelper.FillddlDesignation())
+
+
+
+            @Html.ValidationMessageFor(model => model.DesignationId)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.DepartmentId, "DepartmentId")
+
+            @Html.DropDownListFor(model => model.DepartmentId, DropdownHelper.FillddlDepartment())
+            @Html.ValidationMessageFor(model => model.DepartmentId)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.BranchId, "BranchId")
+
+            @Html.DropDownListFor(model => model.BranchId, DropdownHelper.FillddlBranch())
+            @Html.ValidationMessageFor(model => model.BranchId)
+
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.EmailId)
+
+            @Html.TextBoxFor(model => model.EmailId)
+            @Html.ValidationMessageFor(model => model.EmailId)
+
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.MobileNo)
+
+            @Html.TextBoxFor(model => model.MobileNo)
+            @Html.ValidationMessageFor(model => model.MobileNo)
+
+        </div>
+
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Address)
+
+            @Html.TextBoxFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+    </div>
+    <div class="form-group col-lg-4">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

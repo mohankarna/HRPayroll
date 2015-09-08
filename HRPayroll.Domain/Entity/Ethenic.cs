@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRPayroll.Domain
+namespace HRPayroll.Domain.Entity
 {
   public  class Ethenic
     {

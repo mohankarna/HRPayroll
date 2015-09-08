@@ -13,31 +13,34 @@ namespace HRPayroll.Domain.Entity
 
         [Display(Name = "Employee Name")]
         public string EmployeeName { get; set; }
+        [Required]
         public int TitleId { get; set; }
         [ForeignKey("TitleId")]
         public Title Title { get; set; }
+         [Required]
         public int GenderId { get; set; }
         [ForeignKey("GenderId")]
         public Gender Gender { get; set; }
-       
+        [Required]
         public int DesignationId { get; set; }
          [ForeignKey("DesignationId")]
         public virtual Designation Designation { get; set; }
-
+         [Required]
         
         public int DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
-
+         [Required]
         public int BranchId { get; set; }
         [ForeignKey("BranchId")]
         public Branch Branch { get; set; }
+         [Required]
         public int MaritalStatusId { get; set; }
         [ForeignKey("MaritalStatusId")]
         public MaritalStatus MaritalStatus { get; set; }
 
         [EmailAddress]
-        [RegularExpression("[]")]
+        [Required]
         public string EmailId { get; set; }
         public string MobileNo { get; set; }
         public string Address { get; set; }

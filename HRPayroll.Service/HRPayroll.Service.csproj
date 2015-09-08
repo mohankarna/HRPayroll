@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancePaymentService.cs" />
     <Compile Include="BranchService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DepartmentService.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="StudentService.cs" />
     <Compile Include="TaxSetupService.cs" />
     <Compile Include="TitleService.cs" />
+    <Compile Include="WorkingDaysEntryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRPayroll.Data\HRPayroll.Data.csproj">

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\AdvancePayment.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Entity\Branch.cs" />
     <Compile Include="Entity\Department.cs" />
@@ -50,13 +51,13 @@
     <Compile Include="Entity\LeaveType.cs" />
     <Compile Include="Entity\MariatalStatus.cs" />
     <Compile Include="Entity\PayPlanSetup.cs" />
-    <Compile Include="Entity\StaffSalaryAdvance.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\Gender.cs" />
     <Compile Include="Entity\Ethenic.cs" />
     <Compile Include="Entity\TaxSetup.cs" />
     <Compile Include="Entity\HrGlobalSetup.cs" />
     <Compile Include="Entity\LeaveRequest.cs" />
+    <Compile Include="Entity\WorkingDaysEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\Qualification.cs" />
     <Compile Include="Entity\ServiceType.cs" />

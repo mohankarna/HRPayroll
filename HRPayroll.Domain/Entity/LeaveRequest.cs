@@ -10,11 +10,13 @@ namespace HRPayroll.Domain.Entity
    public class LeaveRequest
     {
       
-       public int Id { get; set; }
+      public int Id { get; set; }
+       
+      public int LeaveTypeId { get; set; }
         [ForeignKey("LeaveTypeId")]
        public LeaveType LeaveType { get; set; }
-       public int LeaveTypeId { get; set; }
-       public DateTime Date { get; set; }
+       
+        public DateTime Date { get; set; }
        public DateTime LeaveFrom { get; set; }
        public DateTime LeaveTo { get; set; }
        public int TotalDays { get; set; }

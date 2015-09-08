@@ -17,9 +17,9 @@ namespace HRPayroll.Domain.Entity
         [Column("VARCHAR")]
         public string TaxDescription { get; set; }
         [Required]
-        public decimal From { get; set; }
+        public DateTime From { get; set; }
         [Required]
-        public decimal To { get; set; }
+        public DateTime To { get; set; }
         [Required]
         public decimal Rate { get; set; }
       public int MaritalStatusId { get; set; }

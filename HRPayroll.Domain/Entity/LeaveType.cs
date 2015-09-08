@@ -2,6 +2,7 @@
 
 namespace HRPayroll.Domain.Entity
 {
+    
     public class LeaveType
     {
         public int Id { get; set; }

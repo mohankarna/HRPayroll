@@ -32,6 +32,10 @@ namespace HRPayroll.Service.Infrastructure
         {
             return repositoryBase.GetById(id);
         }
+        public virtual T GetById(long id)
+        {
+            return repositoryBase.GetById(id);
+        }
 
         public virtual IEnumerable<T> GetAll()
         {

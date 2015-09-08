@@ -40,6 +40,9 @@ namespace HRPayroll.Data.Infrastructure
         public DbSet<HrGlobalSetup> HrGlobalSetups { get; set; }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
         public DbSet<LeaveReport> LeaveReports { get; set; }
+
+        public DbSet<WorkingDaysEntry> WorkingDaysEntries { get; set; }
+        public DbSet<AdvancePayment> AdvancePayments { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<DatabaseContext>(null);

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HRPayroll.Data.Infrastructure;
 using HRPayroll.Domain;
+using HRPayroll.Domain.Entity;
 
 namespace HRPayroll.Data
 {

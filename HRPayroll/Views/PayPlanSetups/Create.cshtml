@@ -1,4 +1,5 @@
-﻿@model HRPayroll.Domain.Entity.PayPlanSetup
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.PayPlanSetup
 
 @{
     ViewBag.Title = "Create";
@@ -10,83 +11,72 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="row">
         <h4>PayPlanSetup</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeId, "EmployeeId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", String.Empty)
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Employee,"EmployeeName")
+                @Html.DropDownList("EmployeeId", DropdownHelper.FillddlEmployee())
                 @Html.ValidationMessageFor(model => model.EmployeeId)
             </div>
-        </div>
+      
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BasicSalary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.BasicSalary)
                 @Html.EditorFor(model => model.BasicSalary)
                 @Html.ValidationMessageFor(model => model.BasicSalary)
             </div>
-        </div>
+   
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PreviousGrade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.PreviousGrade)
                 @Html.EditorFor(model => model.PreviousGrade)
                 @Html.ValidationMessageFor(model => model.PreviousGrade)
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CurrentGrade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.CurrentGrade)
                 @Html.EditorFor(model => model.CurrentGrade)
                 @Html.ValidationMessageFor(model => model.CurrentGrade)
             </div>
-        </div>
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SpecialAllow, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.SpecialAllow)
                 @Html.EditorFor(model => model.SpecialAllow)
                 @Html.ValidationMessageFor(model => model.SpecialAllow)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DearnessAllow, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.DearnessAllow)
                 @Html.EditorFor(model => model.DearnessAllow)
                 @Html.ValidationMessageFor(model => model.DearnessAllow)
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OtherAllow, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+       
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.OtherAllow)
                 @Html.EditorFor(model => model.OtherAllow)
                 @Html.ValidationMessageFor(model => model.OtherAllow)
             </div>
-        </div>
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CIT, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.CIT)
                 @Html.EditorFor(model => model.CIT)
                 @Html.ValidationMessageFor(model => model.CIT)
             </div>
-        </div>
+      
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Insurance, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Insurance)
                 @Html.EditorFor(model => model.Insurance)
                 @Html.ValidationMessageFor(model => model.Insurance)
             </div>
-        </div>
+       
 
-        <div class="form-group">
+        <div class="form-group col-lg-4">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>

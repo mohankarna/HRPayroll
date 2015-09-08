@@ -34,7 +34,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaxSetup taxSetup = Service.GetById(id.ToString());
+            TaxSetup taxSetup = Service.GetById(id.GetValueOrDefault());
             if (taxSetup == null)
             {
                 return HttpNotFound();
@@ -72,7 +72,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaxSetup taxSetup = Service.GetById(id.ToString());
+            TaxSetup taxSetup = Service.GetById(id.GetValueOrDefault());
             if (taxSetup == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaxSetup taxSetup = Service.GetById(id.ToString());
+            TaxSetup taxSetup = Service.GetById(id.GetValueOrDefault());
             if (taxSetup == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TaxSetup taxSetup = Service.GetById(id.ToString());
+            TaxSetup taxSetup = Service.GetById(id);
            Service.Delete(taxSetup);
             return RedirectToAction("Index");
         }

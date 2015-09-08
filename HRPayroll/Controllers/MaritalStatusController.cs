@@ -33,7 +33,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var maritalStatus = Service.GetById(id.ToString());
+            var maritalStatus = Service.GetById(id.GetValueOrDefault());
 
             if (maritalStatus == null)
             {
@@ -71,7 +71,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MaritalStatus maritalStatus = Service.GetById(id.ToString());
+            MaritalStatus maritalStatus = Service.GetById(id.GetValueOrDefault());
             if (maritalStatus == null)
             {
                 return HttpNotFound();
@@ -101,7 +101,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MaritalStatus maritalStatus = Service.GetById(id.ToString());
+            MaritalStatus maritalStatus = Service.GetById(id.GetValueOrDefault());
             if (maritalStatus == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MaritalStatus maritalStatus = Service.GetById(id.ToString());
+            MaritalStatus maritalStatus = Service.GetById(id);
             Service.Delete(maritalStatus);
              return RedirectToAction("Index");
         }

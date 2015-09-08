@@ -138,7 +138,33 @@ namespace HRPayroll.Utility
                 });
             return listitems;
         }
-       
+        public static IEnumerable<SelectListItem> FillddlEthenicGroup()
+        {
+            var service = new EthenicService();
+            var ethenics = service.GetAll();
+            var listitems = ethenics.Select(x =>
+
+                new SelectListItem
+                {
+                    Text = x.EthenicGroup,
+                    Value = x.Id.ToString()
+                });
+            return listitems;
+           
+        }
+       // public static IEnumerable<SelectListItem> FilldllPayPlanSetup()
+       // {
+       //     var service = new PayPlanSetup();
+       //     var PayPlanSetups = service.GetAll();
+       //     var listitems = PayPlanSetups.Select(x =>
+
+       //         new SelectListItem
+       //         {
+       //             Text = x.PayPlanSetupName,
+       //             Value = x.Id.ToString()
+       //         });
+       //     return listitems;
+       // }
       
     }
 }

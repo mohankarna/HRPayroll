@@ -10,24 +10,23 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="row">
         <h4>Branch</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.BranchName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.BranchName)
                 @Html.EditorFor(model => model.BranchName)
                 @Html.ValidationMessageFor(model => model.BranchName)
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-lg-4">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+   
 }
 
 <div>

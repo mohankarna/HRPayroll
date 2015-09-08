@@ -65,14 +65,14 @@ namespace HRPayroll.Controllers
         }
 
         // GET: Branches/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(long id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             
-            Branch branch = Service.GetById(id.ToString());
+            Branch branch = Service.GetById(id);
             if (branch == null)
             {
                 return HttpNotFound();

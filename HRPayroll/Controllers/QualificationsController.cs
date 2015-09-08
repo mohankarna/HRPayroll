@@ -33,7 +33,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var qualification = Service.GetById(id.ToString());
+            var qualification = Service.GetById(id.GetValueOrDefault());
             if (qualification == null)
             {
                 return HttpNotFound();
@@ -70,7 +70,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Qualification qualification = Service.GetById(id.ToString());
+            Qualification qualification = Service.GetById(id.GetValueOrDefault());
             if (qualification == null)
             {
                 return HttpNotFound();
@@ -100,7 +100,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Qualification qualification = Service.GetById(id.ToString());
+            Qualification qualification = Service.GetById(id.GetValueOrDefault());
             if (qualification == null)
             {
                 return HttpNotFound();
@@ -113,7 +113,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Qualification qualification = Service.GetById(id.ToString());
+            Qualification qualification = Service.GetById(id);
             Service.Delete(qualification);
             return RedirectToAction("Index");
         }

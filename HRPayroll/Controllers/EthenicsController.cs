@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HRPayroll.Domain;
+using HRPayroll.Domain.Entity;
 using HRPayroll.Models;
 using HRPayroll.Service;
 
@@ -28,13 +29,13 @@ namespace HRPayroll.Controllers
         }
 
         // GET: Ethenics/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var ethenic = Service.GetById(id.ToString());
+            var ethenic = Service.GetById(id);
             
             if (ethenic == null)
             {
@@ -45,8 +46,7 @@ namespace HRPayroll.Controllers
 
         // GET: Ethenics/Create
         public ActionResult Create()
-        {
-            return View();
+        {            return View();
         }
 
         // POST: Ethenics/Create
@@ -54,7 +54,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EthenicGroup")] Ethenic ethenic)
+        public ActionResult Create( Ethenic ethenic)
         {
             if (ModelState.IsValid)
             {
@@ -67,13 +67,10 @@ namespace HRPayroll.Controllers
         }
 
         // GET: Ethenics/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ethenic ethenic = Service.GetById(id.ToString());
+              
+            Ethenic ethenic = Service.GetById(id);
             if (ethenic == null)
             {
                 return HttpNotFound();
@@ -86,7 +83,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EthenicGroup")] Ethenic ethenic)
+        public ActionResult Edit( Ethenic ethenic)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +100,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ethenic ethenic = Service.GetById(id.ToString());
+            Ethenic ethenic = Service.GetById(id.GetValueOrDefault());
             if (ethenic == null)
             {
                 return HttpNotFound();
@@ -116,7 +113,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ethenic ethenic = Service.GetById(id.ToString());
+            Ethenic ethenic = Service.GetById(id);
             Service.Delete(ethenic);
             return RedirectToAction("Index");
         }

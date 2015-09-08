@@ -14,7 +14,7 @@ namespace HRPayroll.Controllers
 {
     public class EmployeesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+         
         public readonly EmployeeService Service;
 
         public EmployeesController()
@@ -26,7 +26,7 @@ namespace HRPayroll.Controllers
         public ActionResult Index()
         {
             var employees = Service.GetAll();
-           // var employees = db.Employees.Include(e => e.Branch).Include(e => e.Department).Include(e => e.Designation).Include(e => e.Title);
+            // var employees = db.Employees.Include(e => e.Branch).Include(e => e.Department).Include(e => e.Designation).Include(e => e.Title);
             return View(employees);
         }
 
@@ -38,6 +38,7 @@ namespace HRPayroll.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Employee employee = Service.GetById(id.GetValueOrDefault());
+           // Employee employee = Service.GetById(id.GetValueOrDefault());
             //Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
@@ -53,7 +54,7 @@ namespace HRPayroll.Controllers
             //ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName");
             //ViewBag.DesignationId = new SelectList(db.Designations, "Id", "DesignationName");
             //ViewBag.TitleId = new SelectList(db.Titles, "Id", "TitleName");
-            return View();   
+            return View();
         }
 
         // POST: Employees/Create
@@ -61,39 +62,34 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EmployeeName,TitleId,DesignationId,DepartmentId,BranchId,EmailId")] Employee employee)
+        public ActionResult Create(Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Employees.Add(employee);
-                db.SaveChanges();
+                //db.Employees.Add(employee);
+                //db.SaveChanges();
+                Service.Add(employee);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BranchId = new SelectList(db.Branches, "Id", "BranchName", employee.BranchId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", employee.DepartmentId);
-            ViewBag.DesignationId = new SelectList(db.Designations, "Id", "DesignationName", employee.DesignationId);
-            ViewBag.TitleId = new SelectList(db.Titles, "Id", "TitleName", employee.TitleId);
-            ViewBag.GenderId = new SelectList(db.Genders, "Id", "GenderName", employee.GenderId);
+            //ViewBag.BranchId = new SelectList(db.Branches, "Id", "BranchName", employee.BranchId);
+            //ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", employee.DepartmentId);
+            //ViewBag.DesignationId = new SelectList(db.Designations, "Id", "DesignationName", employee.DesignationId);
+            //ViewBag.TitleId = new SelectList(db.Titles, "Id", "TitleName", employee.TitleId);
+            //ViewBag.GenderId = new SelectList(db.Genders, "Id", "GenderName", employee.GenderId);
             return View(employee);
         }
 
         // GET: Employees/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Employee employee = db.Employees.Find(id);
+            
+            var employee = Service.GetById(id);
             if (employee == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BranchId = new SelectList(db.Branches, "Id", "BranchName", employee.BranchId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", employee.DepartmentId);
-            ViewBag.DesignationId = new SelectList(db.Designations, "Id", "DesignationName", employee.DesignationId);
-            ViewBag.TitleId = new SelectList(db.Titles, "Id", "TitleName", employee.TitleId);
+           
             return View(employee);
         }
 
@@ -102,19 +98,14 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EmployeeName,TitleId,DesignationId,DepartmentId,BranchId")] Employee employee)
+        public ActionResult Edit(Employee employee)
         {
             if (ModelState.IsValid)
             {
-                Service.Update(employee);
-                //db.Entry(employee).State = EntityState.Modified;
-                //db.SaveChanges();
+                Service.Update(employee);             
                 return RedirectToAction("Index");
             }
-            ViewBag.BranchId = new SelectList(db.Branches, "Id", "BranchName", employee.BranchId);
-            ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", employee.DepartmentId);
-            ViewBag.DesignationId = new SelectList(db.Designations, "Id", "DesignationName", employee.DesignationId);
-            ViewBag.TitleId = new SelectList(db.Titles, "Id", "TitleName", employee.TitleId);
+         
             return View(employee);
         }
 
@@ -139,19 +130,11 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Employee employee = db.Employees.Find(id);
-            db.Employees.Remove(employee);
-            db.SaveChanges();
+            Employee employee =Service.GetById(id);
+            Service.Delete(employee);          
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+     
     }
 }

@@ -10,17 +10,16 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="row">
         <h4>Qualification</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.AcademicQualification, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.AcademicQualification)
                 @Html.EditorFor(model => model.AcademicQualification)
                 @Html.ValidationMessageFor(model => model.AcademicQualification)
             </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

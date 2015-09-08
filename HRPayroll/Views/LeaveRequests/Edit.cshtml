@@ -1,4 +1,5 @@
-﻿@model HRPayroll.Domain.Entity.LeaveRequest
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.LeaveRequest
 
 @{
     ViewBag.Title = "Edit";
@@ -19,7 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, "EmployeeId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", String.Empty)
+                @Html.DropDownListFor(model => model.EmployeeId, DropdownHelper.FillddlEmployee())
                 @Html.ValidationMessageFor(model => model.EmployeeId)
             </div>
         </div>

@@ -25,7 +25,7 @@ namespace HRPayroll.Models
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.Branch> Branches { get; set; }
 
-        public System.Data.Entity.DbSet<HRPayroll.Domain.Ethenic> Ethenics { get; set; }
+        public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.Ethenic> Ethenics { get; set; }
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Qualification> Qualifications { get; set; }
 
@@ -48,5 +48,9 @@ namespace HRPayroll.Models
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.LeaveRequest> LeaveRequests { get; set; }
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.LeaveReport> LeaveReports { get; set; }
+
+        public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.WorkingDaysEntry> WorkingDaysEntries { get; set; }
+
+        public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.AdvancePayment> AdvancePayments { get; set; }
     }
 }

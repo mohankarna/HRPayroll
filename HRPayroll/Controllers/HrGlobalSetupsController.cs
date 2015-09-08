@@ -34,7 +34,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HrGlobalSetup hrGlobalSetup = Service.GetById(id.ToString());
+            HrGlobalSetup hrGlobalSetup = Service.GetById(id.GetValueOrDefault());
             if (hrGlobalSetup == null)
             {
                 return HttpNotFound();
@@ -71,7 +71,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HrGlobalSetup hrGlobalSetup = Service.GetById(id.ToString());
+            HrGlobalSetup hrGlobalSetup = Service.GetById(id.GetValueOrDefault());
             if (hrGlobalSetup == null)
             {
                 return HttpNotFound();
@@ -101,7 +101,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HrGlobalSetup hrGlobalSetup = Service.GetById(id.ToString());
+            HrGlobalSetup hrGlobalSetup = Service.GetById(id.GetValueOrDefault());
             if (hrGlobalSetup == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            HrGlobalSetup hrGlobalSetup = Service.GetById(id.ToString());
+            HrGlobalSetup hrGlobalSetup = Service.GetById(id);
             Service.Delete(hrGlobalSetup);
             return RedirectToAction("Index");
         }

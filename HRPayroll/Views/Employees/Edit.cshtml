@@ -1,4 +1,5 @@
 ﻿@model HRPayroll.Domain.Entity.Employee
+@using HRPayroll.Utility;
 
 @{
     ViewBag.Title = "Edit";
@@ -9,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Employee</h4>
         <hr />
@@ -27,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TitleId, "TitleId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TitleId", String.Empty)
+                @Html.DropDownListFor(model => model.TitleId, DropdownHelper.FillddlTitle())
                 @Html.ValidationMessageFor(model => model.TitleId)
             </div>
         </div>
@@ -35,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DesignationId, "DesignationId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("DesignationId", String.Empty)
+                @Html.DropDownListFor(model=>model.DesignationId,DropdownHelper.FillddlDesignation())
                 @Html.ValidationMessageFor(model => model.DesignationId)
             </div>
         </div>
@@ -43,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DepartmentId, "DepartmentId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("DepartmentId", String.Empty)
+                @Html.DropDownListFor(model => model.DepartmentId, DropdownHelper.FillddlDepartment())
                 @Html.ValidationMessageFor(model => model.DepartmentId)
             </div>
         </div>
@@ -51,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BranchId, "BranchId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BranchId", String.Empty)
+                @Html.DropDownListFor(model => model.BranchId, DropdownHelper.FillddlBranch())
                 @Html.ValidationMessageFor(model => model.BranchId)
             </div>
         </div>

@@ -35,7 +35,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveType leaveType = Service.GetById(id.ToString());
+            LeaveType leaveType = Service.GetById(id.GetValueOrDefault());
             if (leaveType == null)
             {
                 return HttpNotFound();
@@ -72,7 +72,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveType leaveType = Service.GetById(id.ToString());
+            LeaveType leaveType = Service.GetById(id.GetValueOrDefault());
             if (leaveType == null)
             {
                 return HttpNotFound();
@@ -103,7 +103,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveType leaveType = Service.GetById(id.ToString());
+            LeaveType leaveType = Service.GetById(id.GetValueOrDefault());
             if (leaveType == null)
             {
                 return HttpNotFound();
@@ -116,7 +116,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LeaveType leaveType = Service.GetById(id.ToString());
+            LeaveType leaveType = Service.GetById(id);
            Service.Delete(leaveType);
             return RedirectToAction("Index");
         }

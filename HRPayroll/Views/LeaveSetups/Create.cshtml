@@ -40,8 +40,8 @@
         </div>
         
         <div class="form-group col-lg-4">
-            @Html.LabelFor(model => model.Ethenic.EthenicGroup,"EthenicGroup")
-            @Html.DropDownListFor(model => model.EthenicId, DropdownHelper.FillddlServiceType())
+            @Html.LabelFor(model => model.EthenicId,"EthenicGroup")
+            @Html.DropDownListFor(model => model.EthenicId, DropdownHelper.FillddlEthenicGroup())
             @Html.ValidationMessageFor(model => model.EthenicId)
         </div>
 

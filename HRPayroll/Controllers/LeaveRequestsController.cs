@@ -18,7 +18,7 @@ namespace HRPayroll.Controllers
 
         public LeaveRequestsController()
         {
-            Service=new LeaveRequestService();
+            Service = new LeaveRequestService();
         }
 
 
@@ -26,7 +26,7 @@ namespace HRPayroll.Controllers
         public ActionResult Index()
         {
             var leaveRequests = Service.GetAll();
-            return View(leaveRequests.ToList());
+            return View(leaveRequests);
         }
 
         // GET: LeaveRequests/Details/5
@@ -36,7 +36,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveRequest leaveRequest = Service.GetById(id.ToString());
+            LeaveRequest leaveRequest = Service.GetById(id.GetValueOrDefault());
             if (leaveRequest == null)
             {
                 return HttpNotFound();
@@ -47,7 +47,7 @@ namespace HRPayroll.Controllers
         // GET: LeaveRequests/Create
         public ActionResult Create()
         {
-            
+
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EmployeeId,LeaveType,Date,LeaveFrom,LeaveTo,TotalDays,Reason,IsHalfDay")] LeaveRequest leaveRequest)
+        public ActionResult Create(LeaveRequest leaveRequest)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace HRPayroll.Controllers
                 return RedirectToAction("Index");
             }
 
-           // ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeName", leaveRequest.EmployeeId);
+            // ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeName", leaveRequest.EmployeeId);
             return View(leaveRequest);
         }
 
@@ -75,12 +75,12 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveRequest leaveRequest = Service.GetById(id.ToString());
+            LeaveRequest leaveRequest = Service.GetById(id.GetValueOrDefault());
             if (leaveRequest == null)
             {
                 return HttpNotFound();
             }
-           // ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeName", leaveRequest.EmployeeId);
+            // ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeName", leaveRequest.EmployeeId);
             return View(leaveRequest);
         }
 
@@ -107,7 +107,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveRequest leaveRequest =Service.GetById(id.ToString());
+            LeaveRequest leaveRequest = Service.GetById(id.GetValueOrDefault());
             if (leaveRequest == null)
             {
                 return HttpNotFound();
@@ -120,11 +120,11 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LeaveRequest leaveRequest = Service.GetById(id.ToString());
+            LeaveRequest leaveRequest = Service.GetById(id);
             Service.Delete(leaveRequest);
             return RedirectToAction("Index");
         }
 
-      
+
     }
 }

@@ -34,7 +34,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveReport leaveReport = Service.GetById(id.ToString());
+            LeaveReport leaveReport = Service.GetById(id.GetValueOrDefault());
             if (leaveReport == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Branch,From,To")] LeaveReport leaveReport)
+        public ActionResult Create( LeaveReport leaveReport)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveReport leaveReport = Service.GetById(id.ToString());
+            LeaveReport leaveReport = Service.GetById(id.GetValueOrDefault());
             if (leaveReport == null)
             {
                 return HttpNotFound();
@@ -84,7 +84,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Branch,From,To")] LeaveReport leaveReport)
+        public ActionResult Edit( LeaveReport leaveReport)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LeaveReport leaveReport = Service.GetById(id.ToString());
+            LeaveReport leaveReport = Service.GetById(id.GetValueOrDefault());
             if (leaveReport == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LeaveReport leaveReport = Service.GetById(id.ToString());
+            LeaveReport leaveReport = Service.GetById(id);
             Service.Delete(leaveReport);
             return RedirectToAction("Index");
         }

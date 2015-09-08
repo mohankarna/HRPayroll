@@ -35,7 +35,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-             var title = Service.GetById(id.ToString());
+             var title = Service.GetById(id.GetValueOrDefault());
             if (title == null)
             {
                 return HttpNotFound();
@@ -72,7 +72,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Title title = Service.GetById(id.ToString());
+            Title title = Service.GetById(id.GetValueOrDefault());
             if (title == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Title title = Service.GetById(id.ToString());
+            Title title = Service.GetById(id.GetValueOrDefault());
             if (title == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,8 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Title title = Service.GetById(id.ToString());
+            Title title = Service.GetById(id);
+            Service.Delete(title);
             return RedirectToAction("Index");
         }
 

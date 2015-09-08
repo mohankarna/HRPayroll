@@ -1,4 +1,5 @@
-﻿@model HRPayroll.Domain.Entity.LeaveType
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.LeaveType
 
 @{
     ViewBag.Title = "Edit";
@@ -43,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ServiceTypeId, "ServiceTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ServiceTypeId", String.Empty)
+                @Html.DropDownListFor(model => model.ServiceTypeId, DropdownHelper.FillddlServiceType())
                 @Html.ValidationMessageFor(model => model.ServiceTypeId)
             </div>
         </div>
@@ -51,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EthenicId, "EthenicId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EthenicId", String.Empty)
+                @Html.DropDownListFor(model => model.EthenicId, DropdownHelper.FillddlEthenicGroup())
                 @Html.ValidationMessageFor(model => model.EthenicId)
             </div>
         </div>
@@ -59,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MaritalStatusId, "MaritalStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaritalStatusId", String.Empty)
+                @Html.DropDownListFor(model => model.MaritalStatusId, DropdownHelper.FillddlMaritalStatus())
                 @Html.ValidationMessageFor(model => model.MaritalStatusId)
             </div>
         </div>
@@ -67,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GenderId, "GenderId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("GenderId", String.Empty)
+                @Html.DropDownListFor(model => model.GenderId, DropdownHelper.FillddlGender())
                 @Html.ValidationMessageFor(model => model.GenderId)
             </div>
         </div>

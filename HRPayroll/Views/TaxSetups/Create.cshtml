@@ -11,51 +11,45 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="row">
         <h4>TaxSetup</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.TaxDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.TaxDescription)
                 @Html.EditorFor(model => model.TaxDescription)
                 @Html.ValidationMessageFor(model => model.TaxDescription)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.From, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.From)
                 @Html.EditorFor(model => model.From)
                 @Html.ValidationMessageFor(model => model.From)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.To, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.To)
                 @Html.EditorFor(model => model.To)
                 @Html.ValidationMessageFor(model => model.To)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Rate)
                 @Html.EditorFor(model => model.Rate)
                 @Html.ValidationMessageFor(model => model.Rate)
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaritalStatusId, "MaritalStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+      
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.MaritalStatusId)
                 @Html.DropDownListFor(model=>model.MaritalStatusId,DropdownHelper.FillddlMaritalStatus())
                 @Html.ValidationMessageFor(model => model.MaritalStatusId)
             </div>
-        </div>
+        
 
-        <div class="form-group">
+        <div class="form-group col-lg-4">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>

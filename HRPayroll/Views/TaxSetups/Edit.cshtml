@@ -1,4 +1,5 @@
-﻿@model HRPayroll.Domain.Entity.TaxSetup
+﻿@using HRPayroll.Utility
+@model HRPayroll.Domain.Entity.TaxSetup
 
 @{
     ViewBag.Title = "Edit";
@@ -51,7 +52,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MaritalStatusId, "MaritalStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("MaritalStatusId", String.Empty)
+               @* @Html.DropDownList("MaritalStatusId", String.Empty)*@
+                @Html.DropDownListFor(model => model.MaritalStatusId, DropdownHelper.FillddlMaritalStatus())
                 @Html.ValidationMessageFor(model => model.MaritalStatusId)
             </div>
         </div>

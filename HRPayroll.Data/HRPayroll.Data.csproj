@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancePaymentRepository.cs" />
     <Compile Include="BranchRepository.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DepartmentRepository.cs" />
@@ -63,59 +64,24 @@
     <Compile Include="LeaveRequestRepository.cs" />
     <Compile Include="LeaveSetupRepository.cs" />
     <Compile Include="MaritalStatusRepository.cs" />
-    <Compile Include="Migrations\201508301508474_Muster.cs" />
-    <Compile Include="Migrations\201508301508474_Muster.Designer.cs">
-      <DependentUpon>201508301508474_Muster.cs</DependentUpon>
+    <Compile Include="Migrations\201509082001507_Muster.cs" />
+    <Compile Include="Migrations\201509082001507_Muster.Designer.cs">
+      <DependentUpon>201509082001507_Muster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201508301715492_Muster1.cs" />
-    <Compile Include="Migrations\201508301715492_Muster1.Designer.cs">
-      <DependentUpon>201508301715492_Muster1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508301851449_Muster2.cs" />
-    <Compile Include="Migrations\201508301851449_Muster2.Designer.cs">
-      <DependentUpon>201508301851449_Muster2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508311033028_Muster3.cs" />
-    <Compile Include="Migrations\201508311033028_Muster3.Designer.cs">
-      <DependentUpon>201508311033028_Muster3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509041539345_Muster4.cs" />
-    <Compile Include="Migrations\201509041539345_Muster4.Designer.cs">
-      <DependentUpon>201509041539345_Muster4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081200198_Muster5.cs" />
-    <Compile Include="Migrations\201509081200198_Muster5.Designer.cs">
-      <DependentUpon>201509081200198_Muster5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081217248_Muster6.cs" />
-    <Compile Include="Migrations\201509081217248_Muster6.Designer.cs">
-      <DependentUpon>201509081217248_Muster6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081222442_Muster7.cs" />
-    <Compile Include="Migrations\201509081222442_Muster7.Designer.cs">
-      <DependentUpon>201509081222442_Muster7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081532296_Muster8.cs" />
-    <Compile Include="Migrations\201509081532296_Muster8.Designer.cs">
-      <DependentUpon>201509081532296_Muster8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081658298_Muster9.cs" />
-    <Compile Include="Migrations\201509081658298_Muster9.Designer.cs">
-      <DependentUpon>201509081658298_Muster9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509081713052_Muster10.cs" />
-    <Compile Include="Migrations\201509081713052_Muster10.Designer.cs">
-      <DependentUpon>201509081713052_Muster10.cs</DependentUpon>
+    <Compile Include="Migrations\201509082003083_Muster1.cs" />
+    <Compile Include="Migrations\201509082003083_Muster1.Designer.cs">
+      <DependentUpon>201509082003083_Muster1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PayPlanSetupRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QualificationRepository.cs" />
-    <Compile Include="AdvancePayment.cs" />
+    <Compile Include="RolesRepository.cs" />
     <Compile Include="ServiceTypeRepository.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="TaxSetupRepository.cs" />
     <Compile Include="TitleRepository.cs" />
+    <Compile Include="UsersRepository.cs" />
     <Compile Include="WorkingDaysEntryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,38 +95,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508301508474_Muster.resx">
-      <DependentUpon>201508301508474_Muster.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509082001507_Muster.resx">
+      <DependentUpon>201509082001507_Muster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508301715492_Muster1.resx">
-      <DependentUpon>201508301715492_Muster1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508301851449_Muster2.resx">
-      <DependentUpon>201508301851449_Muster2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508311033028_Muster3.resx">
-      <DependentUpon>201508311033028_Muster3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509041539345_Muster4.resx">
-      <DependentUpon>201509041539345_Muster4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081200198_Muster5.resx">
-      <DependentUpon>201509081200198_Muster5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081217248_Muster6.resx">
-      <DependentUpon>201509081217248_Muster6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081222442_Muster7.resx">
-      <DependentUpon>201509081222442_Muster7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081532296_Muster8.resx">
-      <DependentUpon>201509081532296_Muster8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081658298_Muster9.resx">
-      <DependentUpon>201509081658298_Muster9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509081713052_Muster10.resx">
-      <DependentUpon>201509081713052_Muster10.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509082003083_Muster1.resx">
+      <DependentUpon>201509082003083_Muster1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

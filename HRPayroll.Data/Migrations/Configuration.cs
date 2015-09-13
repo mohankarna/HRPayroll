@@ -10,7 +10,6 @@ namespace HRPayroll.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "HRPayroll.Data.Infrastructure.DatabaseContext";
         }
 
         protected override void Seed(HRPayroll.Data.Infrastructure.DatabaseContext context)

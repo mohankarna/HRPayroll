@@ -9,7 +9,14 @@ namespace HRPayroll.Domain.Entity
     public class HrGlobalSetup
     {
         public int Id { get; set; }
-        public int WorkingHrsPerDay { get; set; }
-        public Decimal OtRate { get; set; }
+        public static int WorkingHrsPerDay  { get; set; }
+        public static Decimal OtRate { get; set; }
+
+        public HrGlobalSetup()
+        {
+            WorkingHrsPerDay = 8;
+            OtRate = (decimal) 1.50;
+        }
+         
     }
 }

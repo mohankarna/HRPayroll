@@ -5,25 +5,26 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using HRPayroll.Domain.Entity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using HRPayroll.Models;
+using HRPayroll.Service;
 
 namespace HRPayroll.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private readonly UsersService service;
         public AccountController()
-            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
+            service = new UsersService();
+
         }
 
-        public AccountController(UserManager<ApplicationUser> userManager)
-        {
-            UserManager = userManager;
-        }
+       
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
 
@@ -41,14 +42,15 @@ namespace HRPayroll.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindAsync(model.UserName, model.Password);
-                if (user != null)
+                var users = new Users();
+                var user = service.CheckLogin(users);
+                if (user)
                 {
-                    await SignInAsync(user, model.RememberMe);
+                  //  await SignInAsync(user, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
                 else

@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body >
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,9 +22,19 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Designation", "Index", "Designation")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Settings<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Designation", "Index", "Designation")</li>
+                            <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                            <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                            <li>@Html.ActionLink("Ethenics", "Index", "Ethenics")</li>
+                            <li>@Html.ActionLink("Genders", "Index", "Genders")</li>
+                            <li>@Html.ActionLink("MaritalStatus", "Index", "MaritalStatus")</li>
+                        </ul>
+                    </li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -51,6 +61,15 @@
         $(":input[type='datetime']").addClass("form-control");
 
 
-        $(":input[type='checkbox']").addClass("form-control");    </script>
+        $(":input[type='checkbox']").addClass("form-control");
+
+
+        $(document).ready(function () {
+
+            $('.dropdown-toggle').dropdown();
+
+        });
+
+    </script>
 </body>
 </html>

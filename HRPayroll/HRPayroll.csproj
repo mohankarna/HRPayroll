@@ -175,11 +175,13 @@
     <Compile Include="Controllers\MaritalStatusController.cs" />
     <Compile Include="Controllers\PayPlanSetupsController.cs" />
     <Compile Include="Controllers\QualificationsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TaxSetupsController.cs" />
     <Compile Include="Controllers\TitlesController.cs" />
-    <Compile Include="Controllers\WorkingDaysEntriesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Views\WorkingDaysEntriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -324,16 +326,23 @@
     <Content Include="Views\LeaveReports\Details.cshtml" />
     <Content Include="Views\LeaveReports\Edit.cshtml" />
     <Content Include="Views\LeaveReports\Index.cshtml" />
-    <Content Include="Views\WorkingDaysEntries\Create.cshtml" />
-    <Content Include="Views\WorkingDaysEntries\Delete.cshtml" />
-    <Content Include="Views\WorkingDaysEntries\Details.cshtml" />
-    <Content Include="Views\WorkingDaysEntries\Edit.cshtml" />
-    <Content Include="Views\WorkingDaysEntries\Index.cshtml" />
     <Content Include="Views\AdvancePayments\Create.cshtml" />
     <Content Include="Views\AdvancePayments\Delete.cshtml" />
     <Content Include="Views\AdvancePayments\Details.cshtml" />
     <Content Include="Views\AdvancePayments\Edit.cshtml" />
     <Content Include="Views\AdvancePayments\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\WorkingDaysEntries\Index.cshtml" />
+    <Content Include="Views\WorkingDaysEntries\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

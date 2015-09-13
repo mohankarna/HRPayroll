@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using HRPayroll.Data.Infrastructure;
@@ -41,6 +42,14 @@ namespace HRPayroll.Service.Infrastructure
         {
             return repositoryBase.GetAll();
         }
-        
+        public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where)
+        {
+            return repositoryBase.GetMany(where);
+        }
+
+        public T Get(Expression<Func<T, bool>> where)
+        {
+            return repositoryBase.Get(where);
+        }
     }
 }

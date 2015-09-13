@@ -43,6 +43,10 @@ namespace HRPayroll.Data.Infrastructure
 
         public DbSet<WorkingDaysEntry> WorkingDaysEntries { get; set; }
         public DbSet<AdvancePayment> AdvancePayments { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Roles> Roles { get; set; }
+        public DbSet<MonthlySalaryMast> MonthlySalaryMast { get; set; }
+        public DbSet<MonthlySalaryDetail> MonthlySalaryDetails { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<DatabaseContext>(null);

@@ -39,6 +39,8 @@ namespace HRPayroll.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        public string Captcha { get; set; }
+
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }

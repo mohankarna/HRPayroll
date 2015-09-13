@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HRPayroll.Domain.Entity.MonthlySalaryDetail>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Holidays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AbsentDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OTHours)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.AttendanceDays)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.Holidays)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.LeaveDays)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.AbsentDays)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.PayDays)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.OTHours)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+    </tr>
+}
+
+</table>

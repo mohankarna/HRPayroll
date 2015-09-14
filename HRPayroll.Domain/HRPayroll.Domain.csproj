@@ -67,10 +67,10 @@
     <Compile Include="Entity\Qualification.cs" />
     <Compile Include="Entity\ServiceType.cs" />
     <Compile Include="Entity\Title.cs" />
+    <Compile Include="ViewModel\WorkingDays.cs" />
+    <Compile Include="ViewModel\WorkingDaysDetails.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HRPayroll.Domain.Entity
@@ -23,7 +24,7 @@ namespace HRPayroll.Domain.Entity
         }
 
         public int Branchid { get; set; }
-        [ForeignKey("BranchId")]
+        [ForeignKey("Branchid")]
         public Branch Branch { get; set; }
 
         private DateTime? _createddate = Convert.ToDateTime("01/01/1991");
@@ -37,5 +38,7 @@ namespace HRPayroll.Domain.Entity
         public bool Approved { get; set; }
         public int ApprovedBy { get; set; }
         public DateTime ApprovedDate { get; set; }
+
+        public List<MonthlySalaryDetail> MonthlySalaryDetails { get; set; }
     }
 }

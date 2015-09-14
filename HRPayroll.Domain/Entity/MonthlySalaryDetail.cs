@@ -50,6 +50,40 @@ namespace HRPayroll.Domain.Entity
 
         public double PfAdded { get; set; }
         public double TotalPF { get; set; }
-        public List<MonthlySalaryDetail> MonthlySalaryDetailslst;
+
+        public double BasicSalary { get; set; }
+
+        public double PreviousGrade { get; set; }
+
+        public double CurrentGrade { get; set; }
+
+        public double DearnessAllowance { get; set; }
+
+        public double HouseRent { get; set; }
+
+        public double TiffinAllowance { get; set; }
+
+        public double SpecialAllowance { get; set; }
+
+        public double MedicalAllowance { get; set; }
+
+        public double OtherAllowance { get; set; }
+        public double PF { get; set; }
+        public double CommunicationAllowance { get; set; }
+        public double DashainAllowance { get; set; }
+        public double DonationFund { get; set; }
+        public double CIT { get; set; }
+        public double Insurance { get; set; }
+
+        public MonthlySalaryDetail()
+        {
+            Holidays = 0;
+            PayDays = 0;
+            PF = 0;
+            PfAdded = 0;
+            AbsentDays = 0;
+            OTHours = 0;
+        }
+        
     }
 }

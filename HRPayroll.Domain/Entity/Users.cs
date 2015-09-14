@@ -17,13 +17,14 @@ namespace HRPayroll.Domain.Entity
 
 
         [ForeignKey("EmployeeId")]
-        [Required]
+      
         public Employee Employee { get; set; }
+          [Required]
         public int EmployeeId { get; set; }
-
+          [Required]
         public int RoleId { get; set; }
         [ForeignKey("RoleId")]
-        [Required]
+        
         public Roles Roles { get; set; }
     }
 }

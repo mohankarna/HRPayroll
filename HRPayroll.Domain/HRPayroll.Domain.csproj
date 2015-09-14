@@ -46,7 +46,6 @@
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Designation.cs" />
     <Compile Include="Entity\Employee.cs" />
-    <Compile Include="Entity\Employee1.cs" />
     <Compile Include="Entity\EmployeeSalarySheet.cs" />
     <Compile Include="Entity\LeaveReport.cs" />
     <Compile Include="Entity\LeaveType.cs" />
@@ -56,7 +55,6 @@
     <Compile Include="Entity\PayPlanSetup.cs" />
     <Compile Include="Entity\Religion.cs" />
     <Compile Include="Entity\Roles.cs" />
-    <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\Gender.cs" />
     <Compile Include="Entity\Ethenic.cs" />
     <Compile Include="Entity\TaxSetup.cs" />

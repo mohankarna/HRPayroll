@@ -32,6 +32,9 @@ namespace HRPayroll.Domain.Entity
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
          [Required]
+        public int ReligionId { get; set; }
+         [ForeignKey("ReligionId")]
+         public virtual Religion Religion { get; set; }
         public int BranchId { get; set; }
         [ForeignKey("BranchId")]
         public Branch Branch { get; set; }

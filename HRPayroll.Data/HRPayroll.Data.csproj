@@ -51,8 +51,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="DesignationRepository.cs" />
+    <Compile Include="EmployeeRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EthenicRepository.cs" />
-    <Compile Include="EmployeeRepository.cs" />
     <Compile Include="GenderRepository.cs" />
     <Compile Include="HrGlobalSetupRepository.cs" />
     <Compile Include="Infrastructure\DatabaseContext.cs" />
@@ -63,13 +65,9 @@
     <Compile Include="LeaveRequestRepository.cs" />
     <Compile Include="LeaveSetupRepository.cs" />
     <Compile Include="MaritalStatusRepository.cs" />
-    <Compile Include="Migrations\201509141712296_Muster.cs" />
-    <Compile Include="Migrations\201509141712296_Muster.Designer.cs">
-      <DependentUpon>201509141712296_Muster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509141812168_Muster1.cs" />
-    <Compile Include="Migrations\201509141812168_Muster1.Designer.cs">
-      <DependentUpon>201509141812168_Muster1.cs</DependentUpon>
+    <Compile Include="Migrations\201509141901168_HRPayroll.cs" />
+    <Compile Include="Migrations\201509141901168_HRPayroll.Designer.cs">
+      <DependentUpon>201509141901168_HRPayroll.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MonthlySalaryDetailRepository.cs" />
@@ -96,11 +94,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509141712296_Muster.resx">
-      <DependentUpon>201509141712296_Muster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509141812168_Muster1.resx">
-      <DependentUpon>201509141812168_Muster1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509141901168_HRPayroll.resx">
+      <DependentUpon>201509141901168_HRPayroll.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

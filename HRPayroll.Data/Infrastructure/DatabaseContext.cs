@@ -38,7 +38,7 @@ namespace HRPayroll.Data.Infrastructure
         public DbSet<HrGlobalSetup> HrGlobalSetups { get; set; }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
         public DbSet<LeaveReport> LeaveReports { get; set; }
-       // public DbSet<Religion> Religions { get; set; }
+        public DbSet<Religion> Religions { get; set; }
 
          
         public DbSet<AdvancePayment> AdvancePayments { get; set; }

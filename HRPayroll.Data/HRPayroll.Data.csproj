@@ -65,7 +65,21 @@
     <Compile Include="LeaveRequestRepository.cs" />
     <Compile Include="LeaveSetupRepository.cs" />
     <Compile Include="MaritalStatusRepository.cs" />
-    <Compile Include="Migrations\201509141901168_HRPayroll.cs" />
+    <Compile Include="Migrations\201509140236290_HRPayroll1.cs" />
+    <Compile Include="Migrations\201509140236290_HRPayroll1.Designer.cs">
+      <DependentUpon>201509140236290_HRPayroll1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509141712296_Muster.cs" />
+    <Compile Include="Migrations\201509141712296_Muster.Designer.cs">
+      <DependentUpon>201509141712296_Muster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509141812168_Muster1.cs" />
+    <Compile Include="Migrations\201509141812168_Muster1.Designer.cs">
+      <DependentUpon>201509141812168_Muster1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509141901168_HRPayroll.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201509141901168_HRPayroll.Designer.cs">
       <DependentUpon>201509141901168_HRPayroll.cs</DependentUpon>
     </Compile>
@@ -94,6 +108,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509140236290_HRPayroll1.resx">
+      <DependentUpon>201509140236290_HRPayroll1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509141712296_Muster.resx">
+      <DependentUpon>201509141712296_Muster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509141812168_Muster1.resx">
+      <DependentUpon>201509141812168_Muster1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509141901168_HRPayroll.resx">
       <DependentUpon>201509141901168_HRPayroll.cs</DependentUpon>
     </EmbeddedResource>

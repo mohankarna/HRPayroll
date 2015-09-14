@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HRPayroll.Domain.Entity
@@ -27,6 +28,8 @@ namespace HRPayroll.Domain.Entity
         public double MedicalAllowance { get; set; }
 
         public double OtherAllowance { get; set; }
+
+        [DisplayName("PF%")]
         public double PF { get; set; }
         public double CommunicationAllowance { get; set; }
         public double DashainAllowance { get; set; }

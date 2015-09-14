@@ -1,34 +1,7 @@
 ﻿@model IEnumerable<HRPayroll.Domain.Entity.MonthlySalaryDetail>
-<script type="text/javascript">
-    function total() {
-        if ($('#<%=gvSalarySheet.ClientID %>') != null) {
+ 
 
-            for (var i = 6; i < $('#<%=gvSalarySheet.ClientID %>').find('tr')[3].cells.length + 1; i++) {
-                var sum = 0;
-
-                // iteration through all td's in the column
-                $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ') span').each(function () {
-                    if ($(this).attr('class') == 'number') {
-
-                        sum += parseFloat($(this).text().replace(',', '')) || 0;
-                    }
-                });
-                // set total in last cell of the column
-                if (sum != 0) {
-                    $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ')').last().html(sum.toFixed(2));
-                } else {
-
-                    $('#<%=gvSalarySheet.ClientID %> tr th:nth-child(' + i + ')').hide();
-                    $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ')').hide();
-                }
-
-            }
-
-        }
-    }
-</script>
-
-<table class="table">
+<table class="table" id='salarytable'>
     <tr>
         <th>
             Emp.Name
@@ -48,12 +21,7 @@
         <th>
             @Html.DisplayNameFor(model => model.PayDays)
         </th>
-        <th>
-            Ot Hr
-        </th>
-        <th>
-            Ot Amt.
-        </th>
+       
         <th>
             Basic Sal.
 

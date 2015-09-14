@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -70,31 +71,39 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
 
-        public ActionResult Create(WorkingDays mast)
+        public string Create(WorkingDays mast)
         {
-            var salarymast = new MonthlySalaryMast();
-            var salarydetails = new List<MonthlySalaryDetail>();
-            salarymast.Branchid = mast.Branchid;
-            salarymast.Month = mast.Month;
-            salarymast.Year = mast.Year;
-            salarymast.Totaldaysinmonth = mast.Totaldaysinmonth;
-            var monthlySalaryDetails = mast.WorkingDaysDetails.Select(x =>
-                new MonthlySalaryDetail
-                {
-                    EmpId = x.EmpId,
-                    AttendanceDays = x.AttendanceDays,
-                    Holidays = x.Holidays,
-                    LeaveDays = x.LeaveDays,
-                    AbsentDays = x.AbsentDays,
-                    PayDays = x.PayDays,
-                    OTHours = x.OTHours
-                }
-            );
-            salarymast.MonthlySalaryDetails = monthlySalaryDetails.ToList();
-            Service.Add(salarymast);
-            return RedirectToAction("Index");
-
-
+            try
+            {
+                var salarymast = new MonthlySalaryMast();
+                var salarydetails = new List<MonthlySalaryDetail>();
+                salarymast.Branchid = mast.Branchid;
+                salarymast.Month = mast.Month;
+                salarymast.Year = mast.Year;
+                salarymast.Totaldaysinmonth = mast.Totaldaysinmonth;
+                var monthlySalaryDetails = mast.WorkingDaysDetails.Select(x =>
+                    new MonthlySalaryDetail
+                    {
+                        EmpId = x.EmpId,
+                        AttendanceDays = x.AttendanceDays,
+                        Holidays = x.Holidays,
+                        LeaveDays = x.LeaveDays,
+                        AbsentDays = x.AbsentDays,
+                        PayDays = x.PayDays,
+                        OTHours = x.OTHours
+                    }
+                );
+                salarymast.MonthlySalaryDetails = monthlySalaryDetails.ToList();
+                Service.Add(salarymast);
+                return "Working Days Saved Successfully";
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Error", ex.Message);
+                return ex.Message;
+                throw new ArgumentException(ex.Message);
+            }
+           
         }
 
         // GET: WorkingDaysEntries/Edit/5

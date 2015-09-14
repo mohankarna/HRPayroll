@@ -174,6 +174,7 @@
     <Compile Include="Controllers\MaritalStatusController.cs" />
     <Compile Include="Controllers\PayPlanSetupsController.cs" />
     <Compile Include="Controllers\QualificationsController.cs" />
+    <Compile Include="Controllers\ReligionsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SalarySheetController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />

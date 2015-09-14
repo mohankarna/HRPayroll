@@ -113,11 +113,11 @@ namespace HRPayroll.Controllers
                     FormsAuthentication.SignOut();
                 }
 
-                return RedirectToAction("Account", "Login");
+                return RedirectToAction("Login", "Account");
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Account", "Login");
+                return RedirectToAction("Login", "Account");
             }
         }
         //

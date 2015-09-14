@@ -2,7 +2,7 @@
 @model HRPayroll.Domain.Entity.MonthlySalaryMast
 
 @{
-    ViewBag.Title = "Working Days View";
+    ViewBag.Title = "Salary Sheet";
 }
 <script type="text/javascript">
     function daysInMonth() {
@@ -22,13 +22,43 @@
             $("#employeetable").empty();
             $("#employeetable").html(employeeslist);
             $("#ajax-progress-dialog").hide();
-
         };
         ajaxOptions.error = function () { alert("Error in Getting Data!!"); };
         $.ajax(ajaxOptions);
-
+        
     };
+    function total() {
+        console.log($("#salarytable").find('tr')[0].cells.length);
+        if ($('#salarytable') != null) {
+            for (var i = 6; i < $("#salarytable").find('tr')[0].cells.length; i++) {
+                var sum = 0;
+                // iteration through all td's in the column
+                $('#salarytable tr td:nth-child(' + i + ')').each(function () {
+                    sum += parseFloat($(this).text().replace(',', '')) || 0;
+                });
+                // set total in last cell of the column
+                if (sum !== 0) {
+                    $('#salarytable tr td:nth-child(' + i + ')').last().html(sum.toFixed(2));
+                } else {
 
+                    $('#salarytable tr th:nth-child(' + i + ')').hide();
+                    $('#salarytable tr td:nth-child(' + i + ')').hide();
+                }
+
+            }
+
+        }
+    }
+    function print() {
+        total();
+        var gridInsideDiv = document.getElementsByClassName('printdiv');
+        var printWindow = window.open('gview.htm', 'popup', 'left=0,top=0,width=1024,height=768,toolbar=1,scrollbars=1,menubar=1,status=1');
+        gridInsideDiv.border = 2;
+        printWindow.document.write(gridInsideDiv.innerHTML);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+    }
 </script>
 
 <style type="text/css">
@@ -53,11 +83,9 @@
     }
 </style>
 <div class="row">
-    <h4>Working Days View</h4>
+    <h4>Salary Sheet</h4>
     <hr />
-    <p>
-        @Html.ActionLink("Create New", "Create") <label></label>@Html.ActionLink("View Salary Sheet", "SalarySheet")
-    </p>
+    
 
     @Html.ValidationSummary(true)
     <div id="ajax-progress-dialog" style='display: none'>
@@ -85,9 +113,13 @@
         @Html.TextBoxFor(model => model.Totaldaysinmonth)
         @Html.ValidationMessageFor(model => model.Totaldaysinmonth)
     </div>
-    <div class="form-group col-lg-2">
+    <div class="form-group col-lg-1">
         <br />
         <input type="submit" value="Search" class="btn btn-default" onclick="daysInMonth(); getEmployees(); return false;" />
+    </div>
+    <div class="form-group col-lg-1">
+        <br />
+        <input type="submit" value="View NonZero" class="btn btn-default" onclick="total(); return false;" />
     </div>
     <div class="clearfix"></div>
     <div id="employeetable"></div>

@@ -47,14 +47,7 @@
         padding: 20px;
     }
 
-    input {
-        width: 100%;
-        margin-bottom: 17px;
-        padding: 15px;
-        background-color: #ECF4F4;
-        border-radius: 2px;
-        border: none;
-    }
+
 
     h2 {
         margin-bottom: 20px;
@@ -95,6 +88,7 @@
         <div id="contentdiv" class="contcustom">
             <span class="fa fa-spinner bigicon"></span>
             <h2>Login</h2>
+            @Html.AntiForgeryToken()
             <div>
                 @using (Html.BeginForm())
                 {
@@ -107,16 +101,16 @@
                     </div>
                     <div class="form-group">
 
-                        <a href="@Url.Action("Index")">
+                        <a href="@Url.Action("Login")">
                             <img alt="Captcha" src="@Url.Action("GetCaptchaImage")" style="" />
                         </a>
 
                     </div>
                     <div class="form-group">
-                       @* @Html.TextBoxFor(model => model.Captcha, new { @class = "form-control input-lg", @placeholder = "How Much is Above?", @required = "required" })*@
+                        @Html.TextBoxFor(model => model.Captcha, new { @class = "form-control input-lg", @placeholder = "How Much is Above?", @required = "required" })
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                        <button class="btn btn-primary  btn-lg  btn-block" type="submit">Login</button>
 
                     </div>
                     if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
@@ -134,43 +128,3 @@
         </div>
     </div>
 </div>
-@*<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true)
-                <div class="form-group">
-                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.UserName)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password)
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        Employee Information and HR Payroll
-    </div>
-</div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@

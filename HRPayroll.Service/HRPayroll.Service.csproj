@@ -55,6 +55,8 @@
     <Compile Include="LeaveRequestService.cs" />
     <Compile Include="LeaveSetupService.cs" />
     <Compile Include="MaritalStatusService.cs" />
+    <Compile Include="MonthlySalaryDetailService.cs" />
+    <Compile Include="MonthlySalaryService.cs" />
     <Compile Include="PayPlanSetupService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QualificationService.cs" />

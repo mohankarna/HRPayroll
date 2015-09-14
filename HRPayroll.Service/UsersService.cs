@@ -19,9 +19,9 @@ namespace HRPayroll.Service
         public bool CheckLogin(Users users)
         {
             var entity = base.Get(user => user.UserName == users.UserName);
-            if (entity.Password== users.Password)
+            if (entity.Password == EncryptionHelper.Encrypt(users.Password))
             {
-                return true; 
+                return true;
             }
             return false;
         }

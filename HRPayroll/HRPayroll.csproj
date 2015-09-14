@@ -176,14 +176,16 @@
     <Compile Include="Controllers\PayPlanSetupsController.cs" />
     <Compile Include="Controllers\QualificationsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SalarySheetController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TaxSetupsController.cs" />
     <Compile Include="Controllers\TitlesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WorkingDaysEntriesController.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UserSession.cs" />
     <Compile Include="Utility\CaptchaHelper.cs" />
-    <Compile Include="Views\WorkingDaysEntriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,9 +202,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\loading.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\hrPayroll.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -345,6 +349,10 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\WorkingDaysEntries\Index.cshtml" />
     <Content Include="Views\WorkingDaysEntries\Create.cshtml" />
+    <Content Include="Views\WorkingDaysEntries\_List.cshtml" />
+    <Content Include="Views\WorkingDaysEntries\_IndexList.cshtml" />
+    <Content Include="Views\SalarySheet\Index.cshtml" />
+    <Content Include="Views\SalarySheet\_IndexList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

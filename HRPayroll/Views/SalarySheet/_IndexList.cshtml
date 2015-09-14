@@ -1,0 +1,229 @@
+﻿@model IEnumerable<HRPayroll.Domain.Entity.MonthlySalaryDetail>
+<script type="text/javascript">
+    function total() {
+        if ($('#<%=gvSalarySheet.ClientID %>') != null) {
+
+            for (var i = 6; i < $('#<%=gvSalarySheet.ClientID %>').find('tr')[3].cells.length + 1; i++) {
+                var sum = 0;
+
+                // iteration through all td's in the column
+                $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ') span').each(function () {
+                    if ($(this).attr('class') == 'number') {
+
+                        sum += parseFloat($(this).text().replace(',', '')) || 0;
+                    }
+                });
+                // set total in last cell of the column
+                if (sum != 0) {
+                    $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ')').last().html(sum.toFixed(2));
+                } else {
+
+                    $('#<%=gvSalarySheet.ClientID %> tr th:nth-child(' + i + ')').hide();
+                    $('#<%=gvSalarySheet.ClientID %> tr td:nth-child(' + i + ')').hide();
+                }
+
+            }
+
+        }
+    }
+</script>
+
+<table class="table">
+    <tr>
+        <th>
+            Emp.Name
+        </th>
+        <th>
+            Att.Days
+        </th>
+        <th>
+            Holidays
+        </th>
+        <th>
+            Leave
+        </th>
+        <th>
+            Absent
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayDays)
+        </th>
+        <th>
+            Ot Hr
+        </th>
+        <th>
+            Ot Amt.
+        </th>
+        <th>
+            Basic Sal.
+
+        </th>
+        <th>
+            Prev.Grade
+        </th>
+        <th>
+            Cur. Grade
+        </th>
+        <th>
+            Special
+        </th>
+        <th>
+            Dearness
+        </th>
+        <th>
+            HouseRent
+        </th>
+        <th>
+            Tiffin
+        </th>
+        <th>
+            Medical
+        </th>
+        <th>
+            Communication
+        </th>
+        <th>
+            Other
+        </th>
+        <th>
+            OT Hrs
+        </th>
+        <th>
+            OT Amt
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Advance
+        </th>
+        <th>
+            Other Advance
+        </th>
+        <th>
+            PF
+        </th>
+        <th>
+            Donation Fund
+        </th>
+        <th>
+            CIT
+        </th>
+        <th>
+            Insurance
+        </th>
+        <th>
+            SS Tax
+        </th>
+        <th>
+            Income Tax
+        </th>
+        <th>
+            Net Total
+        </th>
+        <th>
+            Total Pf
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendanceDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Holidays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AbsentDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasicSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousGrade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentGrade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DearnessAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseRent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiffinAllowance)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommunicationAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherAllowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OTHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OTAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Advance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherAdvance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonationFund)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Insurance)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SSTax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IncomeTax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPF)
+            </td>
+
+
+
+        </tr>
+    }
+
+</table>

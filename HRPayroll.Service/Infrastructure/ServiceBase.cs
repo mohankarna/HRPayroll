@@ -10,7 +10,7 @@ namespace HRPayroll.Service.Infrastructure
 {
     public class ServiceBase<T> where T : class  
     {
-        private RepositoryBase<T> repositoryBase;
+        protected RepositoryBase<T> repositoryBase;
         public ServiceBase(RepositoryBase<T> repo)
         {
             repositoryBase = repo;
@@ -46,7 +46,10 @@ namespace HRPayroll.Service.Infrastructure
         {
             return repositoryBase.GetMany(where);
         }
-
+        public virtual IEnumerable<T> GetManyWithInclude(Expression<Func<T, bool>> where, string include)
+        {
+            return repositoryBase.GetManyWithInclude(where, include);
+        }
         public T Get(Expression<Func<T, bool>> where)
         {
             return repositoryBase.Get(where);

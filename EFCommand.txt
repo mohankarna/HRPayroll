@@ -1,5 +1,5 @@
-Add-Migration "Muster" -ConnectionString "Data Source=.;initial catalog= HRPayroll;Integrated Security=true" -ConnectionProviderName System.Data.SqlClient
+Add-Migration "HRPayroll" -ConnectionString "Data Source=.;initial catalog= HRPayroll;Integrated Security=true"-ConnectionProviderName System.Data.SqlClient
 
-Update-Database -ConnectionString "Data Source=.; initial catalog= HRPayroll;Integrated Security=true" -ConnectionProviderName System.Data.SqlClient
+Update-Database -ConnectionString "Data Source=.; initial catalog= HRPayroll;user id=SA;password=ura@tech12345;" -ConnectionProviderName System.Data.SqlClient
 
 Install-Package Twitter.Bootstrap.MVC

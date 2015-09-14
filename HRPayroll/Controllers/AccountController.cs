@@ -46,7 +46,7 @@ namespace HRPayroll.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
 
@@ -102,6 +102,7 @@ namespace HRPayroll.Controllers
             int userid = UserSession.GetSession().UserId;
             FormsAuthentication.SetAuthCookie(user.UserName, false);
         }
+          [AllowAnonymous]
         public ActionResult LogOut()
         {
             try
@@ -462,7 +463,7 @@ namespace HRPayroll.Controllers
             }
         }
         #endregion
-
+          [AllowAnonymous]
         public ActionResult GetCaptchaImage(string prefix, bool noisy = true)
         {
             var rand = new Random((int)DateTime.Now.Ticks);
@@ -473,7 +474,7 @@ namespace HRPayroll.Controllers
             var captcha = string.Format("{0} + {1} = ?", a, b);
 
             //store answer
-            System.Web.HttpContext.Current.Session["Captcha" + prefix] = a + b;
+            System.Web.HttpContext.Current.Session["Captcha"] = a + b;
 
             //image stream
             FileContentResult img = null;

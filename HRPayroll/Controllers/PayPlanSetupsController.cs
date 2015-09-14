@@ -55,7 +55,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EmployeeId,BasicSalary,PreviousGrade,CurrentGrade,SpecialAllow,DearnessAllow,OtherAllow,CIT,Insurance")] PayPlanSetup payPlanSetup)
+        public ActionResult Create(PayPlanSetup payPlanSetup)
         {
             if (ModelState.IsValid)
             {

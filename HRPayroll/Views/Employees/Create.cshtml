@@ -34,8 +34,8 @@
         <div class="form-group col-lg-4">
             @Html.LabelFor(model => model.Religion, "Religion")
 
-            @Html.DropDownListFor(model => model.Religion, DropdownHelper.FillddlReligion())
-            @Html.ValidationMessageFor(model => model.Religion)
+            @Html.DropDownListFor(model => model.ReligionId, DropdownHelper.FillddlReligion())
+            @Html.ValidationMessageFor(model => model.ReligionId)
 
         </div>
 

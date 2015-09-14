@@ -163,7 +163,6 @@
     <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
-    <Compile Include="Controllers\Employee1Controller.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EthenicsController.cs" />
     <Compile Include="Controllers\GendersController.cs" />
@@ -179,7 +178,6 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SalarySheetController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />
-    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TaxSetupsController.cs" />
     <Compile Include="Controllers\TitlesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -245,13 +243,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Students\Delete.cshtml" />
-    <Content Include="Views\Students\Details.cshtml" />
-    <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\Index.cshtml" />
-    <Content Include="Views\Employee1\Index.cshtml" />
-    <Content Include="Views\Employee1\Create.cshtml" />
     <Content Include="Views\Designation\Create.cshtml" />
     <Content Include="Views\Designation\Delete.cshtml" />
     <Content Include="Views\Designation\Details.cshtml" />
@@ -353,6 +344,11 @@
     <Content Include="Views\WorkingDaysEntries\_IndexList.cshtml" />
     <Content Include="Views\SalarySheet\Index.cshtml" />
     <Content Include="Views\SalarySheet\_IndexList.cshtml" />
+    <Content Include="Views\Religions\Create.cshtml" />
+    <Content Include="Views\Religions\Delete.cshtml" />
+    <Content Include="Views\Religions\Details.cshtml" />
+    <Content Include="Views\Religions\Edit.cshtml" />
+    <Content Include="Views\Religions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -41,7 +41,20 @@
         <th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FathersName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitizenShipNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Religion)
+        </th>
+        
+        
     </tr>
 
 @foreach (var item in Model) {
@@ -72,6 +85,18 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CitizenShipNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FathersName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Religion)
         </td>
        
 

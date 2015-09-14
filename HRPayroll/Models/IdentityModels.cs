@@ -15,7 +15,7 @@ namespace HRPayroll.Models
         {
         }
 
-        public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.Student> Students { get; set; }
+       // public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.Student> Students { get; set; }
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.Designation> Designations { get; set; }
 

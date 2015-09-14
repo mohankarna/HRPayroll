@@ -153,6 +153,21 @@ namespace HRPayroll.Utility
            
 
         }
+        public static IEnumerable<SelectListItem> FillddlReligion()
+        {
+            var service = new ReligionService();
+            var religions = service.GetAll();
+            var listitems = religions.Select(x =>
+
+                new SelectListItem
+                {
+                    Text = x.ReligionName,
+                    Value = x.Id.ToString()
+                });
+            return listitems;
+
+
+        }
        // public static IEnumerable<SelectListItem> FilldllPayPlanSetup()
        // {
        //     var service = new PayPlanSetup();
@@ -165,17 +180,7 @@ namespace HRPayroll.Utility
             var listitems = ethenics.Select(x =>
 
 
-
-
-
-
-
-
-
-
-
-
-
+                
 
 
        //         new SelectListItem

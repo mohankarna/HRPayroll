@@ -31,6 +31,13 @@
             @Html.ValidationMessageFor(model => model.TitleId)
 
         </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Religion, "Religion")
+
+            @Html.DropDownListFor(model => model.Religion, DropdownHelper.FillddlReligion())
+            @Html.ValidationMessageFor(model => model.Religion)
+
+        </div>
 
         <div class="form-group col-lg-4">
             @Html.LabelFor(model => model.GenderId, "Gender")
@@ -94,9 +101,30 @@
             @Html.ValidationMessageFor(model => model.MobileNo)
 
         </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Dob, "Date of Birth")
+
+            @Html.TextBoxFor(model => model.Dob)
+            @Html.ValidationMessageFor(model => model.Dob)
+
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.FathersName, "Father's Name")
+
+            @Html.TextBoxFor(model => model.FathersName)
+            @Html.ValidationMessageFor(model => model.FathersName)
+
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.CitizenShipNo, "CitizenShipNo.")
+
+            @Html.TextBoxFor(model => model.CitizenShipNo)
+            @Html.ValidationMessageFor(model => model.CitizenShipNo)
+
+        </div>
 
         <div class="form-group col-lg-4">
-            @Html.LabelFor(model => model.Address,"Adress")
+            @Html.LabelFor(model => model.Address,"Address")
 
             @Html.TextBoxFor(model => model.Address)
             @Html.ValidationMessageFor(model => model.Address)

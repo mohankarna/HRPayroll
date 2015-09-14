@@ -44,7 +44,6 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DepartmentService.cs" />
     <Compile Include="DesignationService.cs" />
-    <Compile Include="Employee1service.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="EthenicService.cs" />
     <Compile Include="GenderService.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="RolesService.cs" />
     <Compile Include="ServiceCommand.cs" />
     <Compile Include="ServiceTypeService.cs" />
-    <Compile Include="StudentService.cs" />
     <Compile Include="TaxSetupService.cs" />
     <Compile Include="TitleService.cs" />
     <Compile Include="UsersService.cs" />

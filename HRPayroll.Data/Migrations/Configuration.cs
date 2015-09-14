@@ -5,14 +5,14 @@ namespace HRPayroll.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HRPayroll.Data.Infrastructure.DatabaseContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Infrastructure.DatabaseContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(HRPayroll.Data.Infrastructure.DatabaseContext context)
+        protected override void Seed(Infrastructure.DatabaseContext context)
         {
             //  This method will be called after migrating to the latest version.
 

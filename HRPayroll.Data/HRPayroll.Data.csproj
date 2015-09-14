@@ -64,15 +64,17 @@
     <Compile Include="LeaveRequestRepository.cs" />
     <Compile Include="LeaveSetupRepository.cs" />
     <Compile Include="MaritalStatusRepository.cs" />
-    <Compile Include="Migrations\201509082001507_Muster.cs" />
-    <Compile Include="Migrations\201509082001507_Muster.Designer.cs">
-      <DependentUpon>201509082001507_Muster.cs</DependentUpon>
+    <Compile Include="Migrations\201509132036260_HRPayroll.cs" />
+    <Compile Include="Migrations\201509132036260_HRPayroll.Designer.cs">
+      <DependentUpon>201509132036260_HRPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201509082003083_Muster1.cs" />
-    <Compile Include="Migrations\201509082003083_Muster1.Designer.cs">
-      <DependentUpon>201509082003083_Muster1.cs</DependentUpon>
+    <Compile Include="Migrations\201509140236290_HRPayroll1.cs" />
+    <Compile Include="Migrations\201509140236290_HRPayroll1.Designer.cs">
+      <DependentUpon>201509140236290_HRPayroll1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MonthlySalaryDetailRepository.cs" />
+    <Compile Include="MonthlySalaryMastRepository.cs" />
     <Compile Include="PayPlanSetupRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QualificationRepository.cs" />
@@ -95,11 +97,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509082001507_Muster.resx">
-      <DependentUpon>201509082001507_Muster.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509132036260_HRPayroll.resx">
+      <DependentUpon>201509132036260_HRPayroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509082003083_Muster1.resx">
-      <DependentUpon>201509082003083_Muster1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509140236290_HRPayroll1.resx">
+      <DependentUpon>201509140236290_HRPayroll1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

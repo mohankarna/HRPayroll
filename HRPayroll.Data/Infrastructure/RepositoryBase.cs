@@ -71,7 +71,10 @@ namespace HRPayroll.Data.Infrastructure
         {
             return dbset.Where(where).ToList();
         }
-
+        public virtual IEnumerable<T> GetManyWithInclude(Expression<Func<T, bool>> where, string include)
+        {
+            return dbset.Include(include).Where(where).ToList();
+        }
         public T Get(Expression<Func<T, bool>> where)
         {
             return dbset.Where(where).FirstOrDefault<T>();

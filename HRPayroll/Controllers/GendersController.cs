@@ -53,7 +53,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,GenderName")] Gender gender)
+        public ActionResult Create( Gender gender)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,GenderName")] Gender gender)
+        public ActionResult Edit( Gender gender)
         {
             if (ModelState.IsValid)
             {

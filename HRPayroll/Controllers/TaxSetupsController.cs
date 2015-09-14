@@ -54,7 +54,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TaxDescription,From,To,Rate,MaritalStatusId")] TaxSetup taxSetup)
+        public ActionResult Create( TaxSetup taxSetup)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TaxDescription,From,To,Rate,MaritalStatusId")] TaxSetup taxSetup)
+        public ActionResult Edit( TaxSetup taxSetup)
         {
             if (ModelState.IsValid)
             {

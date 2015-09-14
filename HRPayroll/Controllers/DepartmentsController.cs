@@ -34,7 +34,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var department = Service.GetById(id.ToString());
+            var department = Service.GetById(id.GetValueOrDefault());
             if (department == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DepartmentName")] Department department)
+        public ActionResult Create( Department department)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Department department = Service.GetById(id.ToString());
+            Department department = Service.GetById(id.GetValueOrDefault());
             if (department == null)
             {
                 return HttpNotFound();
@@ -84,7 +84,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DepartmentName")] Department department)
+        public ActionResult Edit( Department department)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Department department = Service.GetById(id.ToString());
+            Department department = Service.GetById(id.GetValueOrDefault());
             if (department == null)
             {
                 return HttpNotFound();
@@ -114,7 +114,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Department department = Service.GetById(id.ToString());
+            Department department = Service.GetById(id);
             Service.Delete(department);
             
             return RedirectToAction("Index");

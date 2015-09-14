@@ -150,14 +150,42 @@ namespace HRPayroll.Utility
                     Value = x.Id.ToString()
                 });
             return listitems;
+           
 
         }
+       // public static IEnumerable<SelectListItem> FilldllPayPlanSetup()
+       // {
+       //     var service = new PayPlanSetup();
+       //     var PayPlanSetups = service.GetAll();
+       //     var listitems = PayPlanSetups.Select(x =>
         public static IEnumerable<SelectListItem> FillddlRoles()
         {
             var service = new RolesService();
             var ethenics = service.GetAll();
             var listitems = ethenics.Select(x =>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       //         new SelectListItem
+       //         {
+       //             Text = x.PayPlanSetupName,
+       //             Value = x.Id.ToString()
+       //         });
+       //     return listitems;
+       // }
+      
                 new SelectListItem
                 {
                     Text = x.RoleName,

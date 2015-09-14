@@ -11,79 +11,70 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="row">
         <h4>LeaveType</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LeaveName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveName)
                 @Html.EditorFor(model => model.LeaveName)
                 @Html.ValidationMessageFor(model => model.LeaveName)
             </div>
-        </div>
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LeaveDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.LeaveDescription)
                 @Html.EditorFor(model => model.LeaveDescription)
                 @Html.ValidationMessageFor(model => model.LeaveDescription)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AllowedPerYear, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.AllowedPerYear)
                 @Html.EditorFor(model => model.AllowedPerYear)
                 @Html.ValidationMessageFor(model => model.AllowedPerYear)
             </div>
-        </div>
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ServiceTypeId, "ServiceTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.ServiceType)
                 @Html.DropDownListFor(model => model.ServiceTypeId, DropdownHelper.FillddlServiceType())
                 @Html.ValidationMessageFor(model => model.ServiceTypeId)
             </div>
-        </div>
+      
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EthenicId, "EthenicId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Ethenic)
                 @Html.DropDownListFor(model => model.EthenicId, DropdownHelper.FillddlEthenicGroup())
                 @Html.ValidationMessageFor(model => model.EthenicId)
             </div>
-        </div>
+      
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaritalStatusId, "MaritalStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.MaritalStatus)
                 @Html.DropDownListFor(model => model.MaritalStatusId, DropdownHelper.FillddlMaritalStatus())
                 @Html.ValidationMessageFor(model => model.MaritalStatusId)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.GenderId, "GenderId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Gender)
                 @Html.DropDownListFor(model => model.GenderId, DropdownHelper.FillddlGender())
                 @Html.ValidationMessageFor(model => model.GenderId)
             </div>
-        </div>
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AllowHalfDay, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.AllowHalfDay)
                 @Html.EditorFor(model => model.AllowHalfDay)
                 @Html.ValidationMessageFor(model => model.AllowHalfDay)
             </div>
-        </div>
+       
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsPayable, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.IsPayable)
                 @Html.EditorFor(model => model.IsPayable)
                 @Html.ValidationMessageFor(model => model.IsPayable)
             </div>
@@ -94,7 +85,7 @@
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    
 }
 
 <div>

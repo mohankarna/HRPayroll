@@ -29,13 +29,13 @@ namespace HRPayroll.Controllers
         }
 
         // GET: Designation/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = Service.GetById(id);
+            Designation designation = Service.GetById(id.GetValueOrDefault());
             if (designation == null)
             {
                 return HttpNotFound();
@@ -54,7 +54,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DesignationName,Description")] Designation designation)
+        public ActionResult Create( Designation designation)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = Service.GetById(id.ToString());
+            Designation designation = Service.GetById(id.GetValueOrDefault());
             if (designation == null)
             {
                 return HttpNotFound();
@@ -85,7 +85,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DesignationName,Description")] Designation designation)
+        public ActionResult Edit( Designation designation)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = Service.GetById(id.ToString());
+            Designation designation = Service.GetById(id.GetValueOrDefault());
             if (designation == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Designation designation = Service.GetById(id.ToString());
+            Designation designation = Service.GetById(id);
            Service.Delete(designation);
              
             return RedirectToAction("Index");

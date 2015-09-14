@@ -54,6 +54,7 @@
     <Compile Include="Entity\MonthlySalaryDetail.cs" />
     <Compile Include="Entity\MonthlySalaryMast.cs" />
     <Compile Include="Entity\PayPlanSetup.cs" />
+    <Compile Include="Entity\Religion.cs" />
     <Compile Include="Entity\Roles.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\Gender.cs" />

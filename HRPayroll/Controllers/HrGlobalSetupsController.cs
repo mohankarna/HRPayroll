@@ -53,7 +53,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,WorkingHrsPerDay,OtRate")] HrGlobalSetup hrGlobalSetup)
+        public ActionResult Create( HrGlobalSetup hrGlobalSetup)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,WorkingHrsPerDay,OtRate")] HrGlobalSetup hrGlobalSetup)
+        public ActionResult Edit( HrGlobalSetup hrGlobalSetup)
         {
             if (ModelState.IsValid)
             {

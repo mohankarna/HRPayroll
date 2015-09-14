@@ -175,6 +175,7 @@
     <Compile Include="Controllers\MaritalStatusController.cs" />
     <Compile Include="Controllers\PayPlanSetupsController.cs" />
     <Compile Include="Controllers\QualificationsController.cs" />
+    <Compile Include="Controllers\ReligionsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SalarySheetController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />
@@ -183,7 +184,6 @@
     <Compile Include="Controllers\TitlesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\WorkingDaysEntriesController.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UserSession.cs" />
     <Compile Include="Utility\CaptchaHelper.cs" />
     <Compile Include="Global.asax.cs">
@@ -356,6 +356,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

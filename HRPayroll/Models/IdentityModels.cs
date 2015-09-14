@@ -53,6 +53,7 @@ namespace HRPayroll.Models
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.AdvancePayment> AdvancePayments { get; set; }
 
+
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.MonthlySalaryDetail> MonthlySalaryDetails { get; set; }
 
         public System.Data.Entity.DbSet<HRPayroll.Domain.Entity.MonthlySalaryMast> MonthlySalaryMasts { get; set; }

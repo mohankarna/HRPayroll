@@ -23,8 +23,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (HttpContext.Current.Session["HRPayroll.Session"] != null)
-                    {
+                    @*@if (HttpContext.Current.Session["HRPayroll.Session"] != null)
+                    {*@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle">Settings<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -36,7 +36,7 @@
                                 <li>@Html.ActionLink("MaritalStatus", "Index", "MaritalStatus")</li>
                             </ul>
                         </li>
-                    }
+                   @* }*@
                     @if (HttpContext.Current.Session["Uranus.Session"] != null)
                     {
                         <li id="login" class="dropdown">

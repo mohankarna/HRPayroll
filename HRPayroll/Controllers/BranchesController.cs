@@ -34,7 +34,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }          
-            var branch = Service.GetById(id.ToString());
+            var branch = Service.GetById(id.GetValueOrDefault());
             if (branch == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,BranchName")] Branch branch)
+        public ActionResult Create( Branch branch)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace HRPayroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,BranchName")] Branch branch)
+        public ActionResult Edit( Branch branch)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace HRPayroll.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Branch branch= Service.GetById(id.ToString());
+            Branch branch= Service.GetById(id.GetValueOrDefault());
             if (branch == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,7 @@ namespace HRPayroll.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Branch branch = Service.GetById(id.ToString());
+            Branch branch = Service.GetById(id);
             Service.Delete(branch);
             return RedirectToAction("Index");
         }

@@ -29,13 +29,13 @@ namespace HRPayroll.Controllers
         }
 
         // GET: Ethenics/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var ethenic = Service.GetById(id);
+            var ethenic = Service.GetById(id.GetValueOrDefault());
             
             if (ethenic == null)
             {

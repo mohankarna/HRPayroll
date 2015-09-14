@@ -21,9 +21,7 @@ namespace HRPayroll.Data.Infrastructure
 
 
         
-        public DbSet<Student> Students { get; set; }
-
-        public DbSet<Employee1> Employee1s { get; set; }
+        
         public DbSet<Designation> Designations{ get; set; }
 
         public DbSet<Department> Departments { get; set; }
@@ -40,8 +38,9 @@ namespace HRPayroll.Data.Infrastructure
         public DbSet<HrGlobalSetup> HrGlobalSetups { get; set; }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
         public DbSet<LeaveReport> LeaveReports { get; set; }
+        public DbSet<Religion> Religions { get; set; }
 
-        public DbSet<WorkingDaysEntry> WorkingDaysEntries { get; set; }
+         
         public DbSet<AdvancePayment> AdvancePayments { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<Roles> Roles { get; set; }

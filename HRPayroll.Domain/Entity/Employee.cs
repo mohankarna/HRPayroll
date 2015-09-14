@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HRPayroll.Domain.Entity
@@ -38,6 +39,11 @@ namespace HRPayroll.Domain.Entity
         public int MaritalStatusId { get; set; }
         [ForeignKey("MaritalStatusId")]
         public MaritalStatus MaritalStatus { get; set; }
+
+        public DateTime Dob { get; set; }
+        public string FathersName { get; set; }
+        public int CitizenShipNo { get; set; }
+
 
         [EmailAddress]
         [Required]

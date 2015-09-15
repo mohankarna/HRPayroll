@@ -111,8 +111,16 @@
         $(":input[type='checkbox']").addClass("form-control");
         $(document).ready(function () {
             $('.dropdown-toggle').dropdown();
+            $('.datepicker').datetimepicker(
+            {
+                
+                format: 'L',
+                showClose: true,
+                showClear: true,
+                toolbarPlacement: 'top'
+            }); //Initialise any date pickers
         });
-
+        
     </script>
 </body>
 </html>

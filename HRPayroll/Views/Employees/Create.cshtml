@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "Create";
 }
-
 <h2>Create</h2>
 
 @using (Html.BeginForm())
@@ -104,7 +103,7 @@
         <div class="form-group col-lg-4">
             @Html.LabelFor(model => model.Dob, "Date of Birth")
 
-            @Html.TextBoxFor(model => model.Dob)
+            @Html.TextBoxFor(model => model.Dob, new { @class = "datepicker" })
             @Html.ValidationMessageFor(model => model.Dob)
 
         </div>
@@ -141,3 +140,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ 

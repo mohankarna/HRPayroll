@@ -1,0 +1,88 @@
+﻿
+@model IEnumerable<HRPayroll.Domain.Entity.MonthlySalaryDetail>
+<script type="text/javascript">
+    function CheckAttendanceDays(qtyindex) {
+        var tr = $(qtyindex).parent("td").parent("tr");
+        var attendanceDays = tr.find('[id*=AttendanceDays]');
+        var holidays = tr.find('[id*=Holidays]');
+        var leaveDays = tr.find('[id*=LeaveDays]');
+        var absentDays = tr.find('[id*=AbsentDays]');
+
+        var payDays = tr.find('[id*=PayDays]');
+        var daysinmonth = $('#Totaldaysinmonth').val();
+        absentDays.val(parseFloat(daysinmonth) - parseFloat(attendanceDays.val()) - parseFloat(holidays.val()) - parseFloat(leaveDays.val()));
+
+        if (parseFloat(attendanceDays.val()) > parseFloat(daysinmonth)) {
+            alert('Attendance Days Cannot be greater than total days in month');
+            attendanceDays.val(0);
+            attendanceDays.focus();
+            return false;
+        }
+
+        var paydays = parseFloat(attendanceDays.val()) + parseFloat(holidays.val()) + parseFloat(leaveDays.val());
+
+        payDays.val(paydays);
+        return true;
+    }
+</script>
+<table class="table" id="employeelist">
+    <tr>
+        <th>
+            EmployeeId
+        </th>
+        <th>
+            EmployeeName
+        </th>
+        <th>
+            AttendanceDays
+        </th>
+        <th>
+            Holidays
+        </th>
+        <th>
+            LeaveDays
+        </th>
+        <th>
+            AbsentDays
+        </th>
+        <th>
+            PayDays
+        </th>
+        <th>
+            OTHours
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class='empid'>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.AttendanceDays, new { @onchange = "CheckAttendanceDays(this)", @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.Holidays, new { @onchange = "CheckAttendanceDays(this)", @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.LeaveDays, new { @onchange = "CheckAttendanceDays(this)", @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.AbsentDays, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.PayDays, new { @class = "form-control" })
+            </td>
+            <td>
+                @Html.TextBoxFor(modelItem => item.OTHours, new { @class = "form-control" })
+            </td>
+
+        </tr>
+    }
+
+</table>

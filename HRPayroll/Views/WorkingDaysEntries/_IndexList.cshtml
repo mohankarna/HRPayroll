@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HRPayroll.Domain.Entity.MonthlySalaryDetail>
+
+<table class="table" id="employeelist">
+    <tr>
+        <th>
+            EmployeeId
+        </th>
+        <th>
+            EmployeeName
+        </th>
+        <th>
+            AttendanceDays
+        </th>
+        <th>
+            Holidays
+        </th>
+        <th>
+            LeaveDays
+        </th>
+        <th>
+            AbsentDays
+        </th>
+        <th>
+            PayDays
+        </th>
+        <th>
+            OTHours
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendanceDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Holidays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AbsentDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OTHours)
+            </td>
+
+        </tr>
+    }
+
+</table>
